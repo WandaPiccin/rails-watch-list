@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Lists#show</h1>
+
+  <<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, %>
+  <%= f.association %>
+  <%= f.submit %>
+  <% end %>
+
+  <% @list.bookmarks.each do |bookmark| %>
+    <div>
+      <%= image_tag bookmark.movie.poster_url, size: '200x300 %>
+      <p><%="#{bookmark.movie.title} (#{bookmark.movie.rating})"  %></p>
+      <p>comment: <%= bookmark.comment %></p>
+      <p>Overview: <%= bookmark.movie.overview %></p>
+    </div>
+</div>

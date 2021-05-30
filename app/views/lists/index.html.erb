@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Lists#index</h1>
+
+    <% @lists.each do |list| %>
+      <%= link_to  list_path(list) do %>
+        <%= image_tag " url da foto  " %>
+        <p><%= list.name %></p>
+      <% end %>
+      <hr>
+    <% end %>
+</div>
+
